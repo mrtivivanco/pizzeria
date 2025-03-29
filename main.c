@@ -13,8 +13,8 @@ typedef struct {
 MetricEntry metricMap[] = {
     {"pms", pms},
     {"pls", pls},
-    //{"dms", dms},
-    //{"dls", dls},
+    {"dms", dms},
+    {"dls", dls},
    // {"dmsp", dmsp},
     //{"dlsp", dlsp},
    // {"apo", apo},
