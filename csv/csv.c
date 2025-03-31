@@ -15,7 +15,7 @@ order* read_csv(const char *filename, int *size) { //define los parámeros
 
     int capacity = 100; //Se guarda memoria para hasta 100 pedidos inicialmente
     order *orders = malloc(capacity * sizeof(order));
-    *size = 0; //Los pedidos leídos inician en 0 para llevar la cuenta
+    *size = 0; //inicia el contador de pedidos en 
 
     while (fgets(line, MAX_LINE, file)) { //Ciclo While para que mientras hayan lineas en el archivo se vayan leyendo una por una
         if (*size >= capacity) { //Si el número de pedidos supera la capacidad actual, ésta se duplicará
