@@ -6,24 +6,24 @@
 
 #define MAX_LINE 512 //Define el tamaño máximo de caracteres en cada linea del archivo en 512
 
-order* read_csv(const char *filename, int *size) {
-    FILE *file = fopen(filename, "r");
+order* read_csv(const char *filename, int *size) { //define los parámeros 
+    FILE *file = fopen(filename, "r"); //abre el archivo para leerlo el "r" y de no poder leerlo retorna NULL
     if (!file) return NULL;
 
     char line[MAX_LINE];
     fgets(line, MAX_LINE, file); // Saltar encabezado
 
-    int capacity = 100;
+    int capacity = 100; //Se guarda memoria para hasta 100 pedidos inicialmente
     order *orders = malloc(capacity * sizeof(order));
-    *size = 0;
+    *size = 0; //Los pedidos leídos inician en 0 para llevar la cuenta
 
-    while (fgets(line, MAX_LINE, file)) {
-        if (*size >= capacity) {
+    while (fgets(line, MAX_LINE, file)) { //Ciclo While para que mientras hayan lineas en el archivo se vayan leyendo una por una
+        if (*size >= capacity) { //Si el número de pedidos supera la capacidad actual, ésta se duplicará
             capacity *= 2;
             orders = realloc(orders, capacity * sizeof(order));
         }
 
-        order o;
+        order o; /Declara la estructura "o" para almacenar temporalmente un pedido
         char *token;
 
         // Leer los campos separados por coma
@@ -46,10 +46,10 @@ order* read_csv(const char *filename, int *size) {
         token = strtok(NULL, "\n");
         if (token) strcpy(o.pizza_name, token);
 
-        orders[*size] = o;
-        (*size)++;
+        orders[*size] = o; //Se guarda la estructura "o" eb la posici+on "*size" del arreglo
+        (*size)++; //Se incrementa "*size" para el siguiente pedido
     }
 
-    fclose(file);
-    return orders;
+    fclose(file); //Se cierra el archivo 
+    return orders; //Y retorna el puntero con los pedidos almacenados
 }
