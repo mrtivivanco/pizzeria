@@ -1,9 +1,10 @@
+//Descarga de bibliotecas para el manejo de archivos y funciones a necesitar
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "../ordenes/ordenes.h"
 
-#define MAX_LINE 512
+#define MAX_LINE 512 //Define el tamaño máximo de caracteres en cada linea del archivo en 512
 
 order* read_csv(const char *filename, int *size) {
     FILE *file = fopen(filename, "r");
