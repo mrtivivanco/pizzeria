@@ -30,3 +30,17 @@ char* dmsp(int *size, order *orders) {
             unique++;
         }
     }
+
+    // Encontrar el día con más ventas de pizzas
+    int maxIndex = 0;
+    for (int i = 1; i < unique; i++) {
+        if (pizzasPerDay[i] > pizzasPerDay[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+
+    // Preparar el resultado
+    char *result = malloc(128);
+    sprintf(result, "Fecha con más ventas de pizzas: %s con un total de %d pizzas", orderDates[maxIndex], pizzasPerDay[maxIndex]);
+    return result;
+}
