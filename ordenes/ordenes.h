@@ -1,5 +1,6 @@
-#ifndef ORDER_H
-#define ORDER_H
+#ifndef ORDER_H //Comprueba si ORDER_H no está definido
+#define ORDER_H //Si no esta definifo, define ORDER_H para evitar inclusiones múltiples
+
 //definimos que  caracteristica (atributos) tiene una orden
 typedef struct {
     int pizza_id;
@@ -14,5 +15,5 @@ typedef struct {
     char pizza_category[32];
     char pizza_ingredients[256];
     char pizza_name[64];
-} order;
-#endif
+} order; //Define la estructura "order" que son los datos de un pedido
+#endif //Termina el If de la línea 1
