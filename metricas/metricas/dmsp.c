@@ -6,3 +6,6 @@
 
 //Fechas con mas ventas en términos de cantidad de pizzas
 char* dmsp(int *size, order *orders) {
+    int unique = 0;
+    char orderDates[100][16];       // Fechas únicas
+    int pizzasPerDay[100] = {0};    // Cantidad de pizzas por cada fecha
