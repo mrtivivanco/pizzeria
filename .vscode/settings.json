@@ -1,7 +1,10 @@
 {
-    "files.associations": {          "prueba"
-        "metricas.h": "c";  
-        "stdio.h": "c"; 
+    "files.associations": {   
+        "metricas.h": "c"      
+        "stdio.h": "c"
     }
 }
-//Comando que nos permite asociar los archivos a un lenguaje determinado
+
+"Comando para asociar los archivos a un lenguaje de programación específico"
+"Primero asocia el archivo metricas como un archivo que debe tratarse en C"
+"Luego asocia el archivo stdio como un archivo que debe tratarse en C"
