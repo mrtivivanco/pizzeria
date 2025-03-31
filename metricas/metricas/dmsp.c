@@ -10,7 +10,23 @@ char* dmsp(int *size, order *orders) {
     char orderDates[100][16];       // Fechas únicas
     int pizzasPerDay[100] = {0};    // Cantidad de pizzas por cada fecha
 
-   // Contar cantidad de pizzas vendidas por día
+   // Recorre las órdenes y acumula las pizzas vendidas por día
     for (int i = 0; i < *size; i++) {
         char *date = orders[i].order_date;
         int pizzas = orders[i].quantity;  // Usamos quantity para contar las pizzas
+
+        int found = 0;
+        for (int j = 0; j < unique; j++) {
+            if (strcmp(orderDates[j], date) == 0) {
+                pizzasPerDay[j] += pizzas;
+                found = 1;
+                break;
+            }
+        }
+
+        if (!found) {
+            strcpy(orderDates[unique], date);
+            pizzasPerDay[unique] = pizzas;
+            unique++;
+        }
+    }
