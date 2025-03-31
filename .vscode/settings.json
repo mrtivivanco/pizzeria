@@ -1,6 +1,6 @@
 {
-    "files.associations": { //Comando que nos permite asociar los archivos a lenguajes específicos
-        "metricas.h": "c", //Indica que el archivo metricas es un archivo en C
-        "stdio.h": "c" //Indica que el archivo stdio es un archivo en C
+    "files.associations": { // Comando que nos permite asociar los archivos a lenguajes específicos
+        "metricas.h": "c", // Indica que el archivo metricas es un archivo en C
+        "stdio.h": "c" // Indica que el archivo stdio es un archivo en C
     }
 }
