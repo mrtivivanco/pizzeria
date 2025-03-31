@@ -1,5 +1,5 @@
 {
-    "files.associations": {          //prueba
+    "files.associations": {          #prueba
         "metricas.h": "c";  
         "stdio.h": "c"; 
     }
