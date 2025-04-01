@@ -43,3 +43,20 @@ char* ims(int *size, order *orders) {
             token = strtok(NULL, ",");
         }
     }
+    // Encontrar el ingrediente más vendido
+    int maxIndex = 0;
+    for (int i = 1; i < unique; i++) {
+        if (ingredientCount[i] > ingredientCount[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+
+    // Preparar el resultado
+    char *result = malloc(128);
+    if (result == NULL) {
+        perror("Error al asignar memoria");
+        exit(EXIT_FAILURE);
+    }
+    snprintf(result, 128, "Ingrediente más vendido: %s con un total de %d usos", ingredients[maxIndex], ingredientCount[maxIndex]);
+    return result;
+}
