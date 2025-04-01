@@ -9,7 +9,6 @@ char* pls(int *size, order *orders);   // Pizza menos vendida
 char* dms(int *size, order *orders);   // Día con más dinero
 char* dls(int *size, order *orders);   // Día con menos dinero
 char* dmsp(int *size, order *orders);  // Día con más pizzas
-// char* dmsp(int *size, order *orders);  // Día con más pizzas
 // char* dlsp(int *size, order *orders);  // Día con menos pizzas
 // char* apo(int *size, order *orders);   // Promedio por orden
 // char* apd(int *size, order *orders);   // Promedio por día
