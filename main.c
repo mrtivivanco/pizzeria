@@ -22,7 +22,7 @@ MetricEntry metricMap[] = {
     {"apo", apo},
     {"apd", apd},
     {"ims", ims},
-    //{"hp", hp}
+    {"hp", hp}
 };
 
 int numMetrics = sizeof(metricMap) / sizeof(MetricEntry);
