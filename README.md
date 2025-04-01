@@ -1,10 +1,10 @@
-Vicente Martinez
+Vicente Martinez //
 Correo: vicemartinez@alumnos.uai.cl
 
-Martina Vivanco
+Martina Vivanco //
 Correo:
 
-Magdalena Ulloa
+Magdalena Ulloa //
 Correo:
 
 
