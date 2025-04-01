@@ -30,4 +30,28 @@ char* hp(int *size, order *orders) {
                 break;
             }
         }
+        if (!found) {
+            strncpy(categories[unique], category, CATEGORY_LENGTH - 1);
+            categories[unique][CATEGORY_LENGTH - 1] = '\0'; // Asegura la terminación nula
+            categoryCount[unique] = quantity;
+            unique++;
+        }
+    }
+
+    // Preparar el resultado
+    char *result = malloc(512);
+    if (result == NULL) {
+        perror("Error al asignar memoria");
+        exit(EXIT_FAILURE);
+    }
+    
+    snprintf(result, 512, "Cantidad de pizzas vendidas por categoría:\n");
+    for (int i = 0; i < unique; i++) {
+        char buffer[128];
+        snprintf(buffer, 128, "%s: %d\n", categories[i], categoryCount[i]);
+        strncat(result, buffer, 512 - strlen(result) - 1);
+    }
+    
+    return result;
+}
 
