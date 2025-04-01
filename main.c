@@ -1,13 +1,11 @@
-//Descarga de bibliotecas para el manejo de archivos, funciones a necesitar y los archivos
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "csv.h"
 #include "metricas/metricas.h"
-
-// reconocer lo que me piden si si sirve con lo que usamos
-typedef char* (*MetricFunc)(int*, order*); 
-typedef struct { //define 
+// reconocer lo que me piden si, si sirve con lo que usamos
+typedef char* (*MetricFunc)(int*, order*);
+typedef struct {
     char *name;
     MetricFunc func;
 } MetricEntry;
