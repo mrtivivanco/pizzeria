@@ -12,7 +12,7 @@ char* dmsp(int *size, order *orders);  // Día con más pizzas
 char* dlsp(int *size, order *orders);  // Día con menos pizzas
 char* apo(int *size, order *orders);   // Promedio por orden
 char* apd(int *size, order *orders);   // Promedio por día
-// char* ims(int *size, order *orders);   // Ingrediente más vendido
+char* ims(int *size, order *orders);   // Ingrediente más vendido
 // char* hp(int *size, order *orders);    // Pizzas por categoría
 
 #endif
