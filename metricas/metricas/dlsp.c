@@ -38,3 +38,20 @@ char* dlsp(int *size, order *orders) {
             unique++;
         }
     }
+        // Encontrar el día con menos ventas de pizzas
+    int minIndex = 0;
+    for (int i = 1; i < unique; i++) {
+        if (pizzasPerDay[i] < pizzasPerDay[minIndex]) {
+            minIndex = i;
+        }
+    }
+
+    // Preparar el resultado
+    char *result = malloc(128);
+    if (result == NULL) {
+        perror("Error al asignar memoria");
+        exit(EXIT_FAILURE);
+    }
+    snprintf(result, 128, "Fecha con menos ventas de pizzas: %s con un total de %d pizzas", orderDates[minIndex], pizzasPerDay[minIndex]);
+    return result;
+}
