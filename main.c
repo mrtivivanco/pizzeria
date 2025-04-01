@@ -21,7 +21,7 @@ MetricEntry metricMap[] = {
     {"dlsp", dlsp},
     {"apo", apo},
     {"apd", apd},
-    //{"ims", ims},
+    {"ims", ims},
     //{"hp", hp}
 };
 
