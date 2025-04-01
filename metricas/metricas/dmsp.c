@@ -4,13 +4,20 @@
 #include <string.h>
 #include <stdio.h>
 
-//Fechas con mas ventas en términos de cantidad de pizzas
-char* dmsp(int *size, order *orders) {
-    int unique = 0;
-    char orderDates[100][16];       // Fechas únicas
-    int pizzasPerDay[100] = {0};    // Cantidad de pizzas por cada fecha
+#define MAX_DATES 100
+#define DATE_LENGTH 16
 
-   // Recorre las órdenes y acumula las pizzas vendidas por día
+// Fechas con más ventas en términos de cantidad de pizzas
+char* dmsp(int *size, order *orders) {
+    if (size == NULL || orders == NULL || *size <= 0) {
+        return NULL;
+    }
+
+    int unique = 0;
+    char orderDates[MAX_DATES][DATE_LENGTH];       // Fechas únicas
+    int pizzasPerDay[MAX_DATES] = {0};    // Cantidad de pizzas por cada fecha
+
+    // Recorre las órdenes y acumula las pizzas vendidas por día
     for (int i = 0; i < *size; i++) {
         char *date = orders[i].order_date;
         int pizzas = orders[i].quantity;  // Usamos quantity para contar las pizzas
@@ -25,7 +32,8 @@ char* dmsp(int *size, order *orders) {
         }
 
         if (!found) {
-            strcpy(orderDates[unique], date);
+            strncpy(orderDates[unique], date, DATE_LENGTH - 1);
+            orderDates[unique][DATE_LENGTH - 1] = '\0'; // Asegura la terminación nula
             pizzasPerDay[unique] = pizzas;
             unique++;
         }
@@ -41,6 +49,10 @@ char* dmsp(int *size, order *orders) {
 
     // Preparar el resultado
     char *result = malloc(128);
-    sprintf(result, "Fecha con más ventas de pizzas: %s con un total de %d pizzas", orderDates[maxIndex], pizzasPerDay[maxIndex]);
+    if (result == NULL) {
+        perror("Error al asignar memoria");
+        exit(EXIT_FAILURE);
+    }
+    snprintf(result, 128, "Fecha con más ventas de pizzas: %s con un total de %d pizzas", orderDates[maxIndex], pizzasPerDay[maxIndex]);
     return result;
 }
