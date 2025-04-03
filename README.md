@@ -5,7 +5,7 @@ Martina Vivanco //
 Correo:
 
 Magdalena Ulloa //
-Correo:
+Correo: magulloa@alumnos.uai.cl
 
 
 "LINEA DE COMPILACIÓN"
