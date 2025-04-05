@@ -23,7 +23,7 @@ order* read_csv(const char *filename, int *size) { //define los parámeros
             orders = realloc(orders, capacity * sizeof(order));
         }
 
-        order o; /Declara la estructura "o" para almacenar temporalmente un pedido
+        order o; //Declara la estructura "o" para almacenar temporalmente un pedido
         char *token;
 
         // Leer los campos separados por coma

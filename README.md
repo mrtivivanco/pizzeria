@@ -2,7 +2,7 @@ Vicente Martinez //
 Correo: vicemartinez@alumnos.uai.cl
 
 Martina Vivanco //
-Correo:
+Correo: martivivaco@alumnos.uai.cl
 
 Magdalena Ulloa //
 Correo: magulloa@alumnos.uai.cl
